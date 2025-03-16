@@ -1,0 +1,44 @@
+# Ruby specific
+*.gem
+*.rbc
+/.config
+/coverage/
+/InstalledFiles
+/pkg/
+/spec/reports/
+/spec/examples.txt
+/test/tmp/
+/test/version_tmp/
+/tmp/
+
+# Environment specific
+.env
+.env.*
+
+# Bundler specific
+/.bundle/
+/vendor/bundle
+/lib/bundler/man/
+
+# Log files
+*.log
+
+# System specific
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE specific
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Ruby version manager
+.ruby-version
+.ruby-gemset 
