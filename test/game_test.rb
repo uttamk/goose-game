@@ -28,10 +28,10 @@ class GameTest < Minitest::Test
   end
 
   def test_prevents_duplicate_players
-    player = Player.new("P1")
+    pippo = Player.new("Pippo")
     
-    @game.add_player(player)
-    result = @game.add_player(player)
+    @game.add_player(pippo)
+    result = @game.add_player(pippo)
     
     refute result, "Should not add the same player twice"
     assert_equal 1, @game.players.size
