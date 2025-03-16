@@ -16,10 +16,10 @@ class Game
 
   def move(player)
     rolls = Dice.roll
-    roll_sum = rolls.first + rolls.last
 
-    @board.place_at(roll_sum, player)
+    new_position = rolls.sum + @board.get_position(player)
+    @board.place_at(new_position, player)
 
-    roll_sum
+    new_position
   end
 end 

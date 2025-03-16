@@ -6,7 +6,7 @@ class Board
   def get_position(player)
     idx = @slots.index { |arr| arr.include?(player) }
     if idx.nil?
-      return nil
+      return 0
     end
     idx + 1
   end

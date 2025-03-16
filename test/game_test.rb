@@ -48,6 +48,9 @@ class GameTest < Minitest::Test
     Dice.stub :roll, [5, 5] do
       position = @game.move(pippo)
       assert position == 10
+
+      position = @game.move(pippo)
+      assert position == 20
     end
   end
 end 

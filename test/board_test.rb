@@ -60,7 +60,7 @@ class BoardTest < Minitest::Test
   def test_get_position_when_player_not_on_board
     position = @board.get_position(@player)
 
-    assert_nil position
+    assert_equal 0, position
   end
 
   def test_get_position_when_player_on_board
