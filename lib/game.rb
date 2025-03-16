@@ -1,4 +1,6 @@
 class Game
+  attr_reader :players
+
   BOARD_SIZE = 63
   SPECIAL_SPACES = {
     6 => "Bridge: Go to space 12",
@@ -10,7 +12,14 @@ class Game
   }
 
   def initialize
+    @players = []
     @position = 0
+  end
+
+  def add_player(player)
+    return false if @players.include?(player)
+    @players << player
+    true
   end
 
   def play_turn
