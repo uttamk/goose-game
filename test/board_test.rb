@@ -45,7 +45,7 @@ class BoardTest < Minitest::Test
     player2 = Player.new("P2")
     @board.place_at(63, @player)
     @board.place_at(62, player2)
-    
+
     assert_equal @player, @board.winner
   end
 
@@ -53,7 +53,20 @@ class BoardTest < Minitest::Test
     player2 = Player.new("P2")
     @board.place_at(61, @player)
     @board.place_at(62, player2)
-    
+
     assert_nil @board.winner
+  end
+
+  def test_get_position_when_player_not_on_board
+    position = @board.get_position(@player)
+
+    assert_nil position
+  end
+
+  def test_get_position_when_player_on_board
+    @board.place_at(61, @player)
+    position = @board.get_position(@player)
+
+    assert_equal 61, position
   end
 end 
