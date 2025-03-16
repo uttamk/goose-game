@@ -25,6 +25,10 @@ class Board
     end
   end
 
+  def winner
+    get_slot(63)&.first  # Return the first player in slot 63, or nil if empty
+  end
+
   private
 
   def valid_position?(position)

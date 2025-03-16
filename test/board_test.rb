@@ -40,4 +40,20 @@ class BoardTest < Minitest::Test
     refute @board.place_at(64, @player), "Should reject position 64"
     refute @board.place_at(-1, @player), "Should reject negative positions"
   end
+
+  def test_returns_winner_when_player_on_final_space
+    player2 = Player.new("P2")
+    @board.place_at(63, @player)
+    @board.place_at(62, player2)
+    
+    assert_equal @player, @board.winner
+  end
+
+  def test_returns_nil_when_no_winner
+    player2 = Player.new("P2")
+    @board.place_at(61, @player)
+    @board.place_at(62, player2)
+    
+    assert_nil @board.winner
+  end
 end 
